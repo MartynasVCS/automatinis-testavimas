@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
 
 namespace UnitTestai
 {
@@ -85,12 +84,14 @@ namespace UnitTestai
         [Test]
         public void Sudetis_01_01_01_Double()
         {
+            // Testas "feilina" dėl double tipo netikslumo
             Assert.AreEqual(0.3d, Skaiciuokles.Skaiciuokles.SudetisDouble3(0.1, 0.1, 0.1));
         }
 
         [Test]
         public void Sudetis_01_01_01_Decimal()
         {
+            // Testas "nefeilina" nes naudojamas tikslesnis decimal tipas
             Assert.AreEqual(0.3m, Skaiciuokles.Skaiciuokles.SudetisDecimal3(0.1m, 0.1m, 0.1m));
         }
     }
