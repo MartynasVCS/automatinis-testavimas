@@ -1,6 +1,6 @@
 ﻿namespace Skaiciuokles
 {
-    internal class Skaiciuokles
+    public class Skaiciuokles
     {
         public static int Suma(int sk1, int sk2)
         {
