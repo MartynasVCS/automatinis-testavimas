@@ -150,8 +150,6 @@ namespace SeleniumTestai
 
             string expectedResult = "NaN";
 
-            IWebElement inputA = driver.FindElement(By.Id("sum1"));
-            IWebElement inputB = driver.FindElement(By.Id("sum2"));
             IWebElement buttonGetTotal = driver.FindElement(By.XPath("//*[@id='gettotal']/button"));
             IWebElement spanTotal = driver.FindElement(By.XPath("//*[@id='displayvalue']"));
 
