@@ -56,6 +56,7 @@
     <Compile Include="Driver.cs" />
     <Compile Include="Pages\Common.cs" />
     <Compile Include="Pages\DemoQA\DynamicProperties.cs" />
+    <Compile Include="Pages\DemoQA\RadioButton.cs" />
     <Compile Include="Pages\DemoQA\TextBox.cs" />
     <Compile Include="Pages\OmayoBlogspot\HomePage.cs" />
     <Compile Include="Pages\SeleniumEasy\BasicCheckboxDemo.cs" />

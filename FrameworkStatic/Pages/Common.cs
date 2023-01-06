@@ -89,5 +89,10 @@ namespace FrameworkStatic.Pages
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
+
+        internal static bool GetElementEnabledStatus(string locator)
+        {
+            return GetElement(locator).Enabled;
+        }
     }
 }
