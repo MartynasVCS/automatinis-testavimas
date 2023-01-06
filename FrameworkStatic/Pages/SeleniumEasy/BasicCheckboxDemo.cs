@@ -1,4 +1,7 @@
-﻿namespace FrameworkStatic.Pages.SeleniumEasy
+﻿using System;
+using System.Collections.Generic;
+
+namespace FrameworkStatic.Pages.SeleniumEasy
 {
     public class BasicCheckboxDemo
     {
@@ -60,6 +63,46 @@
         public static bool GetCheckbox4Status()
         {
             return Common.GetElementSelectedStatus(checkbox4Locator);
+        }
+
+        public static void ClickCheckbox1()
+        {
+            Common.ClickElement(checkbox1Locator);
+        }
+
+        public static void ClickCheckbox2()
+        {
+            Common.ClickElement(checkbox2Locator);
+        }
+
+        public static void ClickCheckbox3()
+        {
+            Common.ClickElement(checkbox3Locator);
+        }
+
+        public static void ClickCheckbox4()
+        {
+            Common.ClickElement(checkbox4Locator);
+        }
+
+        public static List<bool> GetStatusOfAllCheckboxes()
+        {
+            return Common.GetMultipleElementSelectedStatus(multipleCheckboxesLocator);
+        }
+
+        public static bool CheckIfAllCheckboxesAreSelected()
+        {
+            List<bool> statuses = Common.GetMultipleElementSelectedStatus(multipleCheckboxesLocator);
+
+            foreach (bool status in statuses)
+            {
+                if (status == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
