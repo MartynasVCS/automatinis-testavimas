@@ -56,6 +56,7 @@
     <Compile Include="DemoQA\ButtonsTests.cs" />
     <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
     <Compile Include="DemoQA\RadioButtonTests.cs" />
+    <Compile Include="DemoQA\SelectMenuTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
     <Compile Include="OmayoBlogspot\HomePageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

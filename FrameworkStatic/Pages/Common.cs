@@ -130,5 +130,21 @@ namespace FrameworkStatic.Pages
             SelectElement selectElement = new SelectElement(element);
             selectElement.SelectByValue(value);
         }
+
+        internal static void SelectOptionByText(string selectElementLocator, string optionText)
+        {
+            IWebElement element = GetElement(selectElementLocator);
+            SelectElement selectElement = new SelectElement(element);
+
+            selectElement.SelectByText(optionText);
+        }
+
+        internal static string GetSelectedOptionText(string selectElementLocator)
+        {
+            IWebElement element = GetElement(selectElementLocator);
+            SelectElement selectElement = new SelectElement(element);
+
+            return selectElement.SelectedOption.Text;
+        }
     }
 }
