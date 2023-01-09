@@ -11,7 +11,7 @@ namespace FrameworkStatic.Pages
 {
     internal class Common
     {
-        internal static IWebElement GetElement(string locator)
+        private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
@@ -124,7 +124,7 @@ namespace FrameworkStatic.Pages
             actions.Perform();
         }
 
-        internal static SelectElement GetSelectElement(string locator)
+        private static SelectElement GetSelectElement(string locator)
         {
             IWebElement element = GetElement(locator);
             return new SelectElement(element);
