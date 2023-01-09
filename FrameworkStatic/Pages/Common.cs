@@ -124,26 +124,27 @@ namespace FrameworkStatic.Pages
             actions.Perform();
         }
 
+        internal static SelectElement GetSelectElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            return new SelectElement(element);
+        }
+
         internal static void SelectOptionByValue(string selectElementLocator, string value)
         {
-            IWebElement element = GetElement(selectElementLocator);
-            SelectElement selectElement = new SelectElement(element);
+            SelectElement selectElement = GetSelectElement(selectElementLocator);
             selectElement.SelectByValue(value);
         }
 
         internal static void SelectOptionByText(string selectElementLocator, string optionText)
         {
-            IWebElement element = GetElement(selectElementLocator);
-            SelectElement selectElement = new SelectElement(element);
-
+            SelectElement selectElement = GetSelectElement(selectElementLocator);
             selectElement.SelectByText(optionText);
         }
 
         internal static string GetSelectedOptionText(string selectElementLocator)
         {
-            IWebElement element = GetElement(selectElementLocator);
-            SelectElement selectElement = new SelectElement(element);
-
+            SelectElement selectElement = GetSelectElement(selectElementLocator);
             return selectElement.SelectedOption.Text;
         }
     }
