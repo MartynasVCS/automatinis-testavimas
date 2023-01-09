@@ -16,7 +16,7 @@ namespace FrameworkStatic.Pages.DemoQA
 
         public static void Open()
         {
-            Driver.OpenPaqe(url);
+            Driver.OpenPage(url);
         }
 
         public static void ClickRadioButtonYes()

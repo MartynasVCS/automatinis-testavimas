@@ -17,7 +17,7 @@ namespace FrameworkStatic
             return driver;
         }
 
-        public static void OpenPaqe(string url)
+        public static void OpenPage(string url)
         {
             driver.Url = url;
         }

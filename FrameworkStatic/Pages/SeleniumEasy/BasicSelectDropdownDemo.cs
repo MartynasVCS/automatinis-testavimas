@@ -8,7 +8,7 @@
 
         public static void Open()
         {
-            Driver.OpenPaqe(url);
+            Driver.OpenPage(url);
         }
 
         public static void SelectWeekday(string weekDay)

@@ -14,7 +14,7 @@
 
         public static void Open()
         {
-            Driver.OpenPaqe(url);
+            Driver.OpenPage(url);
         }
 
         public static void EnterMessage(string message)

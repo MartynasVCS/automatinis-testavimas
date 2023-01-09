@@ -5,7 +5,7 @@
         public static void Open()
         {
             string url = "https://demoqa.com/text-box";
-            Driver.OpenPaqe(url);
+            Driver.OpenPage(url);
         }
 
         public static string GetHeaderText()
