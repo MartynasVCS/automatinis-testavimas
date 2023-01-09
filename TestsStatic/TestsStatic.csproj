@@ -62,6 +62,7 @@
     <Compile Include="SeleniumEasy\BasicCheckboxDemoTests.cs" />
     <Compile Include="SeleniumEasy\BasicFirstFormDemoTests.cs" />
     <Compile Include="SeleniumEasy\BasicRadioButtonDemoTests.cs" />
+    <Compile Include="SeleniumEasy\BasicSelectDropdownDemoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

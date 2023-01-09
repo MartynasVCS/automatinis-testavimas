@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -121,6 +122,13 @@ namespace FrameworkStatic.Pages
 
             actions.ContextClick(element);
             actions.Perform();
+        }
+
+        internal static void SelectOptionByValue(string selectElementLocator, string value)
+        {
+            IWebElement element = GetElement(selectElementLocator);
+            SelectElement selectElement = new SelectElement(element);
+            selectElement.SelectByValue(value);
         }
     }
 }

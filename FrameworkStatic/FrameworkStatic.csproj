@@ -63,6 +63,7 @@
     <Compile Include="Pages\SeleniumEasy\BasicCheckboxDemo.cs" />
     <Compile Include="Pages\SeleniumEasy\BasicFirstFormDemo.cs" />
     <Compile Include="Pages\SeleniumEasy\BasicRadioButtonDemo.cs" />
+    <Compile Include="Pages\SeleniumEasy\BasicSelectDropdownDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
