@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Driver.cs" />
     <Compile Include="Pages\Common.cs" />
+    <Compile Include="Pages\DemoQA\Buttons.cs" />
     <Compile Include="Pages\DemoQA\DynamicProperties.cs" />
     <Compile Include="Pages\DemoQA\RadioButton.cs" />
     <Compile Include="Pages\DemoQA\TextBox.cs" />

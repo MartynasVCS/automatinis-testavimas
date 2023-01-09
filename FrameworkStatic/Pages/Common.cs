@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -93,6 +94,33 @@ namespace FrameworkStatic.Pages
         internal static bool GetElementEnabledStatus(string locator)
         {
             return GetElement(locator).Enabled;
+        }
+
+        internal static void LeftClickElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            Actions actions = new Actions(Driver.GetDriver());
+
+            actions.Click(element);
+            actions.Perform();
+        }
+
+        internal static void DoubleClickElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            Actions actions = new Actions(Driver.GetDriver());
+
+            actions.DoubleClick(element);
+            actions.Perform();
+        }
+
+        internal static void RightClickElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            Actions actions = new Actions(Driver.GetDriver());
+
+            actions.ContextClick(element);
+            actions.Perform();
         }
     }
 }
