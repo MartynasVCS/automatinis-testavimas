@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace FrameworkStatic.Pages
@@ -145,6 +147,43 @@ namespace FrameworkStatic.Pages
         {
             SelectElement selectElement = GetSelectElement(selectElementLocator);
             return selectElement.SelectedOption.Text;
+        }
+
+        internal static void DragElementToTargetJavascript(string sourceCssLocator, string targetCssLocator)
+        {
+            string currentDir = Directory.GetCurrentDirectory();
+            string solutionDir = Directory.GetParent(currentDir).Parent.Parent.FullName;
+            string javascriptFilePath = $"{solutionDir}/FrameworkStatic/Javascript/drag-and-drop.js";
+            string jqueryFilePath = $"{solutionDir}/FrameworkStatic/Javascript/jquery-3.6.3.min.js";
+            string javascriptFile = File.ReadAllText(javascriptFilePath);
+            string jqueryFile = File.ReadAllText(jqueryFilePath);
+            string javascriptCode = $"{jqueryFile}{javascriptFile}$('{sourceCssLocator}').simulateDragDrop({{dropTarget: '{targetCssLocator}'}});";
+            
+            Driver.GetDriver().ExecuteJavaScript(javascriptCode);
+        }
+
+        internal static void DragElementToTarget(string sourceLocator, string targetLocator)
+        {
+            IWebElement source = GetElement(sourceLocator);
+            IWebElement target = GetElement(targetLocator);
+            Actions actions = new Actions(Driver.GetDriver());
+
+            actions.ClickAndHold(source);
+            actions.MoveToElement(target);
+            actions.Release();
+            actions.Build();
+            actions.Perform();
+        }
+
+        internal static List<string> GetElementsTextList(string locator)
+        {
+            List<string> elementsText = new List<string>();
+            List<IWebElement> elements = Common.GetElements(locator);
+            foreach(IWebElement element in elements)
+            {
+                elementsText.Add(element.Text);
+            }
+            return elementsText;
         }
     }
 }

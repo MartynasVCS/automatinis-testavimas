@@ -54,9 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DemoQA\ButtonsTests.cs" />
+    <Compile Include="DemoQA\DroppableTests.cs" />
     <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
     <Compile Include="DemoQA\RadioButtonTests.cs" />
     <Compile Include="DemoQA\SelectMenuTests.cs" />
+    <Compile Include="DemoQA\SortableTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
     <Compile Include="OmayoBlogspot\HomePageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="SeleniumEasy\BasicFirstFormDemoTests.cs" />
     <Compile Include="SeleniumEasy\BasicRadioButtonDemoTests.cs" />
     <Compile Include="SeleniumEasy\BasicSelectDropdownDemoTests.cs" />
+    <Compile Include="SeleniumEasy\DragAndDropDemoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
