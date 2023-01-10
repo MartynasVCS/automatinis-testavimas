@@ -14,7 +14,7 @@ namespace TestsStatic.DemoQA
         }
 
         [Test]
-        public void OldStyleSelectMenuByText()
+        public void OldStyleSelectMenuDropdown()
         {
             string expectedColor = "Purple";
 
@@ -22,6 +22,18 @@ namespace TestsStatic.DemoQA
             string actualColor = SelectMenu.GetSelectedColor();
 
             Assert.AreEqual(expectedColor, actualColor);
+        }
+
+        [Test]
+        public void SelectValueDropdown()
+        {
+            string expectedSelection = "Group 2, option 1";
+
+            SelectMenu.ExpandSelectValueDropdown();
+            SelectMenu.SelectValueFromSelectValueDropdown(expectedSelection);
+            string actualSelection = SelectMenu.GetSelectedValueOfSelectValueDropdown();
+
+            Assert.AreEqual(expectedSelection, actualSelection);
         }
 
         [TearDown]
