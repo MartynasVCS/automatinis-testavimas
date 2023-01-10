@@ -25,6 +25,18 @@ namespace TestsStatic.DemoQA
             Assert.AreEqual(messageElementIsPresent, messageElementActualPresence);
         }
 
+        [Test]
+        public void AlertBoxWithDelay()
+        {
+            bool expectedAlertPresence = false;
+
+            Alerts.ClickAlertWithDelayButton();
+            Alerts.ConfirmAlert();
+            bool actualAlertPresence = Alerts.CheckIfAlertIsPresent();
+
+            Assert.AreEqual(expectedAlertPresence, actualAlertPresence);
+        }
+
         [TearDown]
         public void TearDown()
         {

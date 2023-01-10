@@ -248,5 +248,24 @@ namespace FrameworkStatic.Pages
                 return false;
             }
         }
+
+        internal static bool CheckIfAlertIsPresent()
+        {
+            try
+            {
+                Driver.GetDriver().SwitchTo().Alert();
+                return true;
+            }
+            catch (NoAlertPresentException)
+            {
+                return false;
+            }
+        }
+
+        internal static void WaitForAlertToBePresent()
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.AlertIsPresent());
+        }
     }
 }
