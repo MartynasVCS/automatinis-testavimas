@@ -215,5 +215,15 @@ namespace FrameworkStatic.Pages
             }
             actions.Perform();
         }
+
+        internal static void AcceptAlert()
+        {
+            Driver.GetDriver().SwitchTo().Alert().Accept();
+        }
+
+        internal static string GetAlertText()
+        {
+            return Driver.GetDriver().SwitchTo().Alert().Text;
+        }
     }
 }

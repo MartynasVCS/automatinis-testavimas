@@ -67,6 +67,7 @@
     <Compile Include="SeleniumEasy\BasicRadioButtonDemoTests.cs" />
     <Compile Include="SeleniumEasy\BasicSelectDropdownDemoTests.cs" />
     <Compile Include="SeleniumEasy\DragAndDropDemoTests.cs" />
+    <Compile Include="SeleniumEasy\JavascriptAlertBoxDemoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
