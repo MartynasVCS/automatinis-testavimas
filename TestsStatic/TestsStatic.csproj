@@ -61,6 +61,7 @@
     <Compile Include="DemoQA\SelectMenuTests.cs" />
     <Compile Include="DemoQA\SortableTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
+    <Compile Include="Facebook\LoginTests.cs" />
     <Compile Include="OmayoBlogspot\HomePageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumEasy\BasicCheckboxDemoTests.cs" />

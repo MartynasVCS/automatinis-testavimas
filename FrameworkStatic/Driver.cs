@@ -9,7 +9,9 @@ namespace FrameworkStatic
 
         public static void Initialize()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("disable-notifications");
+            driver = new ChromeDriver(options);
         }
 
         public static IWebDriver GetDriver()

@@ -267,5 +267,12 @@ namespace FrameworkStatic.Pages
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.AlertIsPresent());
         }
+
+        internal static void WaitForElementWithText(string text)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Until(d => d.FindElement(By.XPath($"//*")).Text.Contains(text));
+        }
     }
 }
