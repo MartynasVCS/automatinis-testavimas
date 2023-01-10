@@ -36,6 +36,17 @@ namespace TestsStatic.OmayoBlogspot
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [Test]
+        public void FileUpload()
+        {
+            string expectedResult = "Driver.cs";
+
+            HomePage.SetFileForUpload();
+            string actualResult = HomePage.GetSelectedFileName();
+
+            Assert.IsTrue(actualResult.Contains(expectedResult));
+        }
+
         [TearDown]
         public void TearDown()
         {
