@@ -230,5 +230,10 @@ namespace FrameworkStatic.Pages
         {
             Driver.GetDriver().SwitchTo().Alert().Dismiss();
         }
+
+        internal static void SendKeysToAlert(string keys)
+        {
+            Driver.GetDriver().SwitchTo().Alert().SendKeys(keys);
+        }
     }
 }

@@ -8,7 +8,9 @@ namespace FrameworkStatic.Pages.SeleniumEasy
         private static string sectionLocator = "//*[contains(@class,'panel-primary')]";
         private static string buttonAlertBoxLocator = $"({sectionLocator})[1]//button";
         private static string buttonConfirmBoxLocator = $"({sectionLocator})[2]//button";
+        private static string buttonPromptBoxLocator = $"({sectionLocator})[3]//button";
         private static string messageConfirmBoxLocator = "//*[@id='confirm-demo']";
+        private static string messagePromptBoxLocator = "//*[@id='prompt-demo']";
 
         public static void Open()
         {
@@ -24,10 +26,19 @@ namespace FrameworkStatic.Pages.SeleniumEasy
         {
             Common.ClickElement(buttonConfirmBoxLocator);
         }
+        public static void ClickPromptBoxButton()
+        {
+            Common.ClickElement(buttonPromptBoxLocator);
+        }
 
         public static string GetConfirmBoxMessage()
         {
             return Common.GetElementText(messageConfirmBoxLocator);
+        }
+
+        public static string GetPromptBoxMessage()
+        {
+            return Common.GetElementText(messagePromptBoxLocator);
         }
 
         public static void ConfirmAlert()
@@ -35,14 +46,19 @@ namespace FrameworkStatic.Pages.SeleniumEasy
             Common.AcceptAlert();
         }
 
-        public static string GetAlertText()
+        public static void EnterNameToPromptBox(string name)
         {
-            return Common.GetAlertText();
+            Common.SendKeysToAlert(name);
         }
 
         public static void CancelAlert()
         {
             Common.DismissAlert();
+        }
+
+        public static string GetAlertText()
+        {
+            return Common.GetAlertText();
         }
     }
 }
