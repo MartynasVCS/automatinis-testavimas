@@ -225,5 +225,10 @@ namespace FrameworkStatic.Pages
         {
             return Driver.GetDriver().SwitchTo().Alert().Text;
         }
+
+        internal static void DismissAlert()
+        {
+            Driver.GetDriver().SwitchTo().Alert().Dismiss();
+        }
     }
 }
