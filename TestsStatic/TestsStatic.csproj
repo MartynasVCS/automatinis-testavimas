@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoQA\AlertsTests.cs" />
     <Compile Include="DemoQA\ButtonsTests.cs" />
     <Compile Include="DemoQA\DroppableTests.cs" />
     <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
