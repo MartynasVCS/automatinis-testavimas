@@ -171,7 +171,6 @@ namespace FrameworkStatic.Pages
             actions.ClickAndHold(source);
             actions.MoveToElement(target);
             actions.Release();
-            actions.Build();
             actions.Perform();
         }
 
@@ -214,7 +213,6 @@ namespace FrameworkStatic.Pages
             {
                 actions.Click(element);
             }
-            actions.Build();
             actions.Perform();
         }
     }
