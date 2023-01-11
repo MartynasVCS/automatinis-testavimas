@@ -11,20 +11,22 @@
             Driver.OpenPage("https://demoqa.com/browser-windows");
         }
 
+        private static void SwitchWindowFromCurrent()
+        {
+            string currentHandle = Common.GetCurrentWindowHandle();
+            Common.SwitchToNewWindowFromParentWindowByHandle(currentHandle);
+        }
+
         public static void ClickNewTabButton()
         {
             Common.ClickElement(buttonNewTabLocator);
-
-            string currentHandle = Common.GetCurrentWindowHandle();
-            Common.SwitchToNewWindowFromParentWindowByHandle(currentHandle);
+            SwitchWindowFromCurrent();
         }
 
         public static void ClickNewWindowButton()
         {
             Common.ClickElement(buttonNewWindowLocator);
-
-            string currentHandle = Common.GetCurrentWindowHandle();
-            Common.SwitchToNewWindowFromParentWindowByHandle(currentHandle);
+            SwitchWindowFromCurrent();
         }
 
         public static string GetNewTabHeading()
