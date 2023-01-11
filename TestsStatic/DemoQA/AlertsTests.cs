@@ -1,15 +1,15 @@
 ﻿using FrameworkStatic;
 using FrameworkStatic.Pages.DemoQA;
 using NUnit.Framework;
+using TestsStatic.BaseClasses;
 
 namespace TestsStatic.DemoQA
 {
-    internal class AlertsTests
+    internal class AlertsTests : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.Initialize();
             Alerts.Open();
         }
 
@@ -38,9 +38,9 @@ namespace TestsStatic.DemoQA
         }
 
         [TearDown]
-        public void TearDown()
+        public override void TearDown()
         {
-            Driver.CloseDriver();
+
         }
     }
 }

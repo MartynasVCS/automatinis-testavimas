@@ -1,15 +1,15 @@
 ﻿using FrameworkStatic;
 using FrameworkStatic.Pages.DemoQA;
 using NUnit.Framework;
+using TestsStatic.BaseClasses;
 
 namespace TestsStatic.DemoQA
 {
-    internal class ButtonsTests
+    internal class ButtonsTests : BaseTestSingleSession
     {
-        [SetUp]
-        public void SetUp()
+        [OneTimeSetUp]
+        public void Open()
         {
-            Driver.Initialize();
             Buttons.Open();
         }
 
@@ -44,11 +44,6 @@ namespace TestsStatic.DemoQA
             string actualMessage = Buttons.GetRightClickMessage();
 
             Assert.AreEqual(expectedMessage, actualMessage);
-        }
-
-        [TearDown] public void TearDown()
-        {
-            Driver.CloseDriver();
         }
     }
 }

@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\BaseTestSingleSession.cs" />
+    <Compile Include="BaseClasses\BaseTest.cs" />
     <Compile Include="DemoQA\AlertsTests.cs" />
     <Compile Include="DemoQA\ButtonsTests.cs" />
     <Compile Include="DemoQA\DroppableTests.cs" />
