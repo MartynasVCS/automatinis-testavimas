@@ -1,15 +1,14 @@
-﻿using FrameworkStatic;
-using FrameworkStatic.Pages.DemoQA;
+﻿using FrameworkStatic.Pages.DemoQA;
 using NUnit.Framework;
+using TestsStatic.BaseClasses;
 
 namespace TestsStatic.DemoQA
 {
-    internal class TextBoxTests
+    internal class TextBoxTests : BaseTest
     {
         [SetUp]
-        public void Setup()
+        public void Open()
         {
-            Driver.Initialize();
             TextBox.Open();
         }
 
@@ -33,12 +32,6 @@ namespace TestsStatic.DemoQA
             string actualResult = TextBox.GetHeaderText();
 
             Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [TearDown]
-        public void Cleanup()
-        {
-            Driver.CloseDriver();
         }
     }
 }

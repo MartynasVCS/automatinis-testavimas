@@ -1,5 +1,7 @@
 ﻿using FrameworkStatic;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using System;
 
 namespace TestsStatic.BaseClasses
 {
@@ -14,6 +16,10 @@ namespace TestsStatic.BaseClasses
         [TearDown]
         public virtual void TearDown()
         {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                Driver.TakeScreenshot(TestContext.CurrentContext.Test.FullName);
+            }
             Driver.CloseDriver();
         }
     }
