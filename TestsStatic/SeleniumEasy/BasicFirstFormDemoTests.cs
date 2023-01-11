@@ -1,15 +1,20 @@
-﻿using FrameworkStatic;
-using FrameworkStatic.Pages.SeleniumEasy;
+﻿using FrameworkStatic.Pages.SeleniumEasy;
 using NUnit.Framework;
+using TestsStatic.BaseClasses;
 
+// Leidžia nustatyti kiek paralelinių procesų norime turėti
+// Pagal nutylėjimą: branduolių skaičius arba 2 (kuris didesnis)
+[assembly: LevelOfParallelism(3)]
 namespace TestsStatic.SeleniumEasy
 {
-    internal class BasicFirstFormDemoTests
+
+    // Šitaip padarome, kad klasėje esantys testai galėtų veikti paraleliai
+    [Parallelizable(scope: ParallelScope.Children)]
+    internal class BasicFirstFormDemoTests : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.Initialize();
             BasicFirstFormDemo.Open();
         }
 
@@ -59,12 +64,6 @@ namespace TestsStatic.SeleniumEasy
             string actualResult = BasicFirstFormDemo.GetValueOfTotal();
 
             Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [TearDown]
-        public void Cleanup()
-        {
-            Driver.CloseDriver();
         }
     }
 }
