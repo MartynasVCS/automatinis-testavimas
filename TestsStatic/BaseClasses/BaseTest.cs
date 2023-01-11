@@ -18,7 +18,7 @@ namespace TestsStatic.BaseClasses
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                Driver.TakeScreenshot(TestContext.CurrentContext.Test.FullName);
+                Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
             }
             Driver.CloseDriver();
         }
