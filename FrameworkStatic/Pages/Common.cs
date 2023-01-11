@@ -270,9 +270,12 @@ namespace FrameworkStatic.Pages
 
         internal static void WaitForElementWithText(string text)
         {
+            IWebElement element = GetElement($"//*");
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
+
+            // diskusija apie stale element exception ir sprendimas: https://stackoverflow.com/a/41502474/4054411
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Until(d => d.FindElement(By.XPath($"//*")).Text.Contains(text));
+            wait.Until(ExpectedConditions.TextToBePresentInElement(element, text));
         }
     }
 }
