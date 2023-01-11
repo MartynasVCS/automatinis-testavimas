@@ -36,11 +36,5 @@ namespace TestsStatic.DemoQA
 
             Assert.AreEqual(expectedAlertPresence, actualAlertPresence);
         }
-
-        [TearDown]
-        public override void TearDown()
-        {
-
-        }
     }
 }
