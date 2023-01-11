@@ -3,6 +3,7 @@
     public class BrowserWindows
     {
         private static string buttonNewTabLocator = "//*[@id='tabButton']";
+        private static string buttonNewWindowLocator = "//*[@id='windowButton']";
         private static string headingNewTabLocator = "//*[@id='sampleHeading']";
 
         public static void Open()
@@ -13,6 +14,14 @@
         public static void ClickNewTabButton()
         {
             Common.ClickElement(buttonNewTabLocator);
+
+            string currentHandle = Common.GetCurrentWindowHandle();
+            Common.SwitchToNewWindowFromParentWindowByHandle(currentHandle);
+        }
+
+        public static void ClickNewWindowButton()
+        {
+            Common.ClickElement(buttonNewWindowLocator);
 
             string currentHandle = Common.GetCurrentWindowHandle();
             Common.SwitchToNewWindowFromParentWindowByHandle(currentHandle);
