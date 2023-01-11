@@ -13,7 +13,7 @@ namespace TestsStatic.SeleniumEasy
             BasicFirstFormDemo.Open();
         }
 
-        [Test, Order(4)]
+        [Test, Order(3)]
         public void SeleniumEasySingleInputFieldValueOnly()
         {
             string expectedResult = "Martynas";
@@ -25,7 +25,7 @@ namespace TestsStatic.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [Test, Order(3)]
+        [Test, Order(2)]
         public void SeleniumEasySingleInputFieldFullMessage()
         {
             string message = "Martynas";
@@ -38,26 +38,23 @@ namespace TestsStatic.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [TestCase("3", "4", "7")]
+        [TestCase("5", "4", "9")]
+        [TestCase("a", "4", "NaN")]
+        [TestCase("4", "c", "NaN")]
+        [TestCase("d", "c", "NaN")]
+        [TestCase("", "", "NaN")]
         [Test, Order(1)]
-        public void SeleniumEasyTwoInputFields()
+        public void SeleniumEasyTwoInputFields(string valueInputA, string valueInputB, string expectedResult)
         {
-            string valueInputA = "3";
-            string valueInputB = "4";
-            string expectedResult = "7";
-
-            BasicFirstFormDemo.EnterValueA(valueInputA);
-            BasicFirstFormDemo.EnterValueB(valueInputB);
-            BasicFirstFormDemo.ClickGetTotalButton();
-            string actualResult = BasicFirstFormDemo.GetValueOfTotal();
-
-            Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [Test, Order(2)]
-        public void SeleniumEasyTwoInputFieldsNaN()
-        {
-            string expectedResult = "NaN";
-
+            if (valueInputA != "")
+            {
+                BasicFirstFormDemo.EnterValueA(valueInputA);
+            }
+            if (valueInputB != "")
+            {
+                BasicFirstFormDemo.EnterValueB(valueInputB);
+            }
             BasicFirstFormDemo.ClickGetTotalButton();
             string actualResult = BasicFirstFormDemo.GetValueOfTotal();
 

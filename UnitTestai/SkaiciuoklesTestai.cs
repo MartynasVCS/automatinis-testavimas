@@ -35,44 +35,25 @@ namespace UnitTestai
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        /// <summary>
+        /// TestCase anotacija nepalaido decimal tipo!!!
+        /// </summary>
+        [TestCase(6, 4, 1.5)]
+        [TestCase(8, 4, 2)]
+        [TestCase(1, 3, 0.3333333333333333333333333333)]
         [Test]
-        public void Dalyba_6_4_Double()
+        public void Dalyba_Decimal(int sk1, int sk2, decimal rez)
         {
-            double expectedResult = 1.5;
-
-            double actualResult = Skaiciuokles.Skaiciuokles.DalybaDouble(6, 4);
-
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(rez, Skaiciuokles.Skaiciuokles.DalybaDecimal(sk1, sk2));
         }
 
+        [TestCase(1, 10, 0.1d)]
+        [TestCase(6, 4, 1.5d)]
+        [TestCase(1, 3, 0.33333333333333333d)]
         [Test]
-        public void Dalyba_6_4_Decimal()
+        public void Dalyba_1_3_Double(int sk1, int sk2, double dalmuo)
         {
-            Assert.AreEqual(1.5m, Skaiciuokles.Skaiciuokles.DalybaDecimal(6, 4));
-        }
-
-        [Test]
-        public void Dalyba_8_2_Decimal()
-        {
-            Assert.AreEqual(2m, Skaiciuokles.Skaiciuokles.DalybaDecimal(8, 4));
-        }
-
-        [Test]
-        public void Dalyba_1_3_Decimal()
-        {
-            Assert.AreEqual(0.3333333333333333333333333333m, Skaiciuokles.Skaiciuokles.DalybaDecimal(1, 3));
-        }
-
-        [Test]
-        public void Dalyba_1_3_Double()
-        {
-            Assert.AreEqual(0.33333333333333333d, Skaiciuokles.Skaiciuokles.DalybaDouble(1, 3));
-        }
-
-        [Test]
-        public void Dalyba_1_10_Double()
-        {
-            Assert.AreEqual(0.1, Skaiciuokles.Skaiciuokles.DalybaDouble(1, 10));
+            Assert.AreEqual(dalmuo, Skaiciuokles.Skaiciuokles.DalybaDouble(sk1, sk2));
         }
 
         [Test]
