@@ -13,7 +13,7 @@ namespace TestsStatic.SeleniumEasy
             BasicFirstFormDemo.Open();
         }
 
-        [Test]
+        [Test, Order(4)]
         public void SeleniumEasySingleInputFieldValueOnly()
         {
             string expectedResult = "Martynas";
@@ -25,7 +25,7 @@ namespace TestsStatic.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [Test]
+        [Test, Order(3)]
         public void SeleniumEasySingleInputFieldFullMessage()
         {
             string message = "Martynas";
@@ -38,7 +38,7 @@ namespace TestsStatic.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [Test]
+        [Test, Order(1)]
         public void SeleniumEasyTwoInputFields()
         {
             string valueInputA = "3";
@@ -53,7 +53,7 @@ namespace TestsStatic.SeleniumEasy
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [Test]
+        [Test, Order(2)]
         public void SeleniumEasyTwoInputFieldsNaN()
         {
             string expectedResult = "NaN";
